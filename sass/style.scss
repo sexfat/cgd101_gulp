@@ -1,0 +1,80 @@
+// 引用 var.scss
+// _告訴scss 不要編譯 
+@import 'var';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'page/index';
+@import 'page/about';
+
+
+
+body {
+    $bgc: #333;
+    $a: 10px; //  區域變數
+    background-color: $bgc; //取到區域變數值
+    color: $color;
+    padding: null; // 屬性刪除
+    margin: $margin;
+    border-color: map-get($map, 'red');
+}
+
+// 取不到區域變數的值
+a {
+    //font-size: $a;
+    font-size: $fontSize;
+}
+
+// .wrapper {
+// }
+// .wrapper h1 {
+// }
+
+
+.wrapper {
+    width: $layout;
+    margin: 0 auto;
+
+    h1 {
+        font-size: 30px;
+
+        .title {
+            font-size: 12px;
+            display: inline-block;
+        }
+    }
+
+    span {
+        font-size: 20px;
+    }
+}
+
+// index
+
+.index {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+//about 
+
+.about {
+    h2 {
+        font-size: $fontSize;
+    }
+}
+//偽元素
+a {
+    color: #333;
+    &:hover {
+        color : #eee
+    }
+    &::before {
+      content: '';
+    }
+}
+
+// a:hover {
+//     color: #eee;
+
+// }
