@@ -192,7 +192,6 @@ $con : false;
         //引用其他的函式
         @include center()
     }
-
     // background-color
     background-color:$bgc
 }
@@ -208,7 +207,7 @@ $con : false;
 
 }
 
-
+// 按鈕組件（函式）
 @mixin btn($btn_bg, $width:null) {
     color: #fff;
     text-align: center;
@@ -226,13 +225,13 @@ $con : false;
 }
 
 .btn_large {
-  @include btn(#333 , 200px);
+    @include btn(#333, 200px);
 }
 
 .btn_default {
-    @include btn(#f29 , 120px);
-  }
+    @include btn(#f29, 120px);
+}
 
-  .btn_small {
-    @include btn(#333 , 60px);
-  }
+.btn_small {
+    @include btn(#333, 60px);
+}
