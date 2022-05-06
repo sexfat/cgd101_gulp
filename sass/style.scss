@@ -26,8 +26,6 @@ a {
 
 
 .wrapper {
-    width: $layout;
-    margin: 0 auto;
 
     h1 {
         font-size: 30px;
@@ -159,26 +157,30 @@ $con : false;
 }
 
 
-// 函式 
+// ================== 函式 ============================ 
+
 //$minHeight 區域變數 只在作用域內可以取得　
-@mixin center($minHeight:null){
+@mixin center($minHeight:null) {
     margin-left: auto;
     margin-right: auto;
     min-height: $minHeight;
-}   
+}
+
 
 .center {
-  @include center(200px)
+    //引用  
+    @include center(200px)
 }
 
 .layout {
-   width:  1200px;
-   @include center(100px);
+    // 引用
+    width: 1200px;
+    @include center(100px);
 }
 
 // ＬＡＹＯＵＴ範例
-
-@mixin layout($width){
+@mixin layout($width , $bgc : null) {
+    // if layout
     @if ($width == 100) {
         width: 100%;
     }
@@ -187,14 +189,17 @@ $con : false;
         width: $width + px;
         //引用其他的函式
         @include center()
-    }  
-} 
-
-.section {
- @include layout(1200)
+    }
+    // background-color
+    background-color:$bgc
+}
+.w100 {
+    @include layout(100 , #f29);
+    min-height: 300px;   
 }
 
+.w1200 {
+   @include layout(1200 ,#f30);
+   min-height: 300px;
 
-.layout {
-  @include layout(100)
 }
