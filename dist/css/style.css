@@ -89,11 +89,28 @@ a::before {
 
 a {
   color: #f20;
-  -webkit-transition: .4s all ease;
-  transition: .4s all ease;
+  font-size: 30px;
+  -webkit-transition: .2s all ease;
+  transition: .2s all ease;
 }
 
 a:hover {
   color: #660e00;
+  font-size: 35px;
+}
+
+.btn {
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+  max-width: 80px;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: .1s all ease;
+  transition: .1s all ease;
+}
+
+.btn:hover {
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */

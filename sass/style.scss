@@ -80,20 +80,39 @@ a {
 
 //  顏色函式
 .color {
-  color : lighten(#000000,  90); // 顏色變深
-  background-color : darken(#fff,  50)//顏色變淺
+    color: lighten(#000000, 90); // 顏色變深
+    background-color: darken(#fff, 50) //顏色變淺
 }
 
-//範例運用
+//顏色函式範例運用
 $a_color : #f20;
 
 
 a {
-  color : $a_color;
-  transition: .4s all ease;
-  &:hover {
-    color: darken($a_color, 30);
+    color: $a_color;
+    font-size: 30px;
+    transition: .2s all ease;
 
-  }
+    &:hover {
+        color: darken($a_color, 30);
+        font-size: 35px;
+    }
 }
 
+
+$btn_bg: #333;
+
+.btn {
+    color: #fff;
+    text-align: center;
+    background-color: $btn_bg;
+    max-width: 80px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: .1s all ease;
+    //hover過去的效果
+    &:hover {
+        background-color: darken($btn_bg, 20);
+    }
+
+}
