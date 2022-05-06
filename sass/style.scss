@@ -190,12 +190,12 @@ $con : false;
 
 
 
-@include btn(xxl , #f20 , 250px){
-   border-radius: 10px
+@include btn(xxl, #f20, 250px) {
+    border-radius: 10px
+}
 
-
-};
-@include btn(xl , #333 , 200px);
+;
+@include btn(xl, #333, 200px);
 
 
 
@@ -216,4 +216,24 @@ $con : false;
 
 
 
-@include pull(200 , right)
+@include pull(10, right);
+
+
+
+//grid
+
+@mixin grid($col) {
+    @for $i from 1 through $col{
+        .col-#{$i} {
+            flex: 0 0 auto;
+            width: ($i / $col) *100%;
+
+        }
+    }
+}
+
+
+@include grid(12);
+
+
+
