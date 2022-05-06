@@ -75,7 +75,6 @@ a {
     width: floor(150.56) + px; //無條件捨去
     height: ceil(150.56) + px; // 無條件進位
     font-size: round(15.56) + px; // 四捨五入
-
 }
 
 //  顏色函式
@@ -99,7 +98,7 @@ a {
     }
 }
 
-
+// 按鈕範例
 $btn_bg: #333;
 
 .btn {
@@ -114,5 +113,18 @@ $btn_bg: #333;
     &:hover {
         background-color: darken($btn_bg, 20);
     }
-
 }
+
+// 運算函式範例 h1 ~ h5
+
+$body_font : 16px;
+
+h1 {font-size: round($body_font * 4) }
+h2 {font-size: round($body_font * 3.5) }
+h3 {font-size: round($body_font * 3) }
+h4 {font-size: round($body_font * 2) }
+h5 {font-size: round($body_font * 1) }
+
+
+
+
