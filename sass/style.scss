@@ -9,7 +9,7 @@
 
 
 body {
-    $bgc: #333;
+    $bgc: #eee;
     $a: 10px; //  區域變數
     background-color: $bgc; //取到區域變數值
     color: $color;
@@ -23,11 +23,6 @@ a {
     //font-size: $a;
     font-size: $fontSize;
 }
-
-// .wrapper {
-// }
-// .wrapper h1 {
-// }
 
 
 .wrapper {
@@ -48,21 +43,11 @@ a {
     }
 }
 
-// index
 
-.index {
-    h1 {
-        font-size: 40px;
-    }
-}
 
 //about 
 
-.about {
-    h2 {
-        font-size: $fontSize;
-    }
-}
+
 //偽元素
 a {
     color: #333;
@@ -74,7 +59,21 @@ a {
     }
 }
 
-// a:hover {
-//     color: #eee;
+// 運算 
+// 單位相同才能運算
+.test {
+   width:  1 + 100px;
+   height:  10 - 100px; // 負值 
+   margin:  10 * 10px; //單位
+   font : (100 / 10) + px // 要注意的是 unit and () 
+}
 
-// }
+// 運算的函式
+.test1 {
+  
+width: floor(150.56) + px ;  //無條件捨去
+height: ceil(150.56) + px ; // 無條件進位
+font-size: round(15.56) + px ; // 四捨五入
+
+}
+
