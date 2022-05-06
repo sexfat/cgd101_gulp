@@ -2,10 +2,14 @@
 $color : #333;
 $bgc : #eee;
 $margin : 10px auto;
-$fontSize : 16px;
+$fontSize : 20px;
 $layout : 1920px;
 /*==css== */
 // map 數值型態
 
-$map : ('red' : #f20,
+$map : (
+    'red' : #f20,
     'black' : #333);
+
+// images url
+$path  :  dist/images;

@@ -192,6 +192,7 @@ $con : false;
         //引用其他的函式
         @include center()
     }
+
     // background-color
     background-color:$bgc
 }
@@ -208,30 +209,52 @@ $con : false;
 }
 
 // 按鈕組件（函式）
-@mixin btn($btn_bg, $width:null) {
-    color: #fff;
-    text-align: center;
-    background-color: $btn_bg;
-    max-width: $width;
-    padding: 10px 30px;
-    cursor: pointer;
-    transition: .4s all ease;
-
-    //hover過去的效果
-    &:hover {
-        background-color: darken($btn_bg, 20);
+@mixin btn($style, $btn_bg, $width:null) {
+    .btn_#{$style} {
+        color: #fff;
+        text-align: center;
+        background-color: $btn_bg;
+        max-width: $width;
+        padding: 10px 30px;
+        cursor: pointer;
+        transition: .4s all ease;
+        @content;
+        //hover過去的效果
+        &:hover {
+            background-color: darken($btn_bg, 20);
+        }
     }
 
 }
 
-.btn_large {
-    @include btn(#333, 200px);
+@include btn(xxl , #f20 , 250px){
+   border-radius: 10px
+
+
+};
+@include btn(xl , #333 , 200px);
+
+
+
+
+
+// #{}  變數轉型　（屬性值以外都要轉型）
+@mixin font($font, $var, $path) {
+    .font#{$font} {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: $font + px;
+        #{$var}: 10px, ;
+        background-image: url('./#{$path}/aa.png')
+    }
 }
 
-.btn_default {
-    @include btn(#f29, 120px);
+
+@include font(30, padding, dist/images);
+
+.slider1 {
+    background-image: url('./#{$path}/a1.jpg');
 }
 
-.btn_small {
-    @include btn(#333, 60px);
+.slider2 {
+    background-image: url('./#{$path}/a2.jpg');
 }

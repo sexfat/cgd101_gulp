@@ -24,7 +24,7 @@ footer {
 }
 
 .about h2 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 }
 
 a {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .wrapper h1 {
@@ -161,7 +161,23 @@ h5 {
   min-height: 300px;
 }
 
-.btn_large {
+.btn_xxl {
+  color: #fff;
+  text-align: center;
+  background-color: #f20;
+  max-width: 250px;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+  border-radius: 10px;
+}
+
+.btn_xxl:hover {
+  background-color: #991400;
+}
+
+.btn_xl {
   color: #fff;
   text-align: center;
   background-color: #333;
@@ -172,37 +188,22 @@ h5 {
   transition: .4s all ease;
 }
 
-.btn_large:hover {
+.btn_xl:hover {
   background-color: black;
 }
 
-.btn_default {
-  color: #fff;
-  text-align: center;
-  background-color: #f29;
-  max-width: 120px;
-  padding: 10px 30px;
-  cursor: pointer;
-  -webkit-transition: .4s all ease;
-  transition: .4s all ease;
+.font30 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  background-image: url("./dist/images/aa.png");
 }
 
-.btn_default:hover {
-  background-color: #bb0065;
+.slider1 {
+  background-image: url("./dist/images/a1.jpg");
 }
 
-.btn_small {
-  color: #fff;
-  text-align: center;
-  background-color: #333;
-  max-width: 60px;
-  padding: 10px 30px;
-  cursor: pointer;
-  -webkit-transition: .4s all ease;
-  transition: .4s all ease;
-}
-
-.btn_small:hover {
-  background-color: black;
+.slider2 {
+  background-image: url("./dist/images/a2.jpg");
 }
 /*# sourceMappingURL=style.css.map */
