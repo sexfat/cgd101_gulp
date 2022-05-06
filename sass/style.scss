@@ -1,10 +1,14 @@
 // 引用 var.scss
 // _告訴scss 不要編譯 
-@import 'var';
+@import 'base/var';
+@import 'base/reset';
+@import 'mixin/mixin';
+//@import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'page/index';
 @import 'page/about';
+
 
 
 
@@ -47,17 +51,17 @@ a {
 
 
 //偽元素
-a {
-    color: #333;
+// a {
+//     color: #333;
 
-    &:hover {
-        color: #eee
-    }
+//     &:hover {
+//         color: #eee
+//     }
 
-    &::before {
-        content: '';
-    }
-}
+//     &::before {
+//         content: '';
+//     }
+// }
 
 // 運算 
 // 單位相同才能運算
@@ -65,7 +69,7 @@ a {
     width: 1 + 100px;
     height: 10 - 100px; // 負值 
     margin: 10 * 10px; //單位
-    font: (100 / 10) + px // 要注意的是 unit and () 
+    font: calc(100 / 10) + px // 要注意的是 unit and () 
 }
 
 // 運算的函式
@@ -157,14 +161,7 @@ $con : false;
 }
 
 
-// ================== 函式 ============================ 
 
-//$minHeight 區域變數 只在作用域內可以取得　
-@mixin center($minHeight:null) {
-    margin-left: auto;
-    margin-right: auto;
-    min-height: $minHeight;
-}
 
 
 .center {
@@ -178,24 +175,7 @@ $con : false;
     @include center(100px);
 }
 
-// ＬＡＹＯＵＴ範例
-@mixin layout($width, $bgc : null) {
 
-    // if layout
-    @if ($width==100) {
-        width: 100%;
-    }
-
-    @else {
-        max-width: $width + px;
-        width: 100%;
-        //引用其他的函式
-        @include center()
-    }
-
-    // background-color
-    background-color:$bgc
-}
 
 .w100 {
     @include layout(100, #f29);
@@ -208,24 +188,7 @@ $con : false;
 
 }
 
-// 按鈕組件（函式）
-@mixin btn($style, $btn_bg, $width:null) {
-    .btn_#{$style} {
-        color: #fff;
-        text-align: center;
-        background-color: $btn_bg;
-        max-width: $width;
-        padding: 10px 30px;
-        cursor: pointer;
-        transition: .4s all ease;
-        @content;
-        //hover過去的效果
-        &:hover {
-            background-color: darken($btn_bg, 20);
-        }
-    }
 
-}
 
 @include btn(xxl , #f20 , 250px){
    border-radius: 10px
@@ -238,15 +201,6 @@ $con : false;
 
 
 
-// #{}  變數轉型　（屬性值以外都要轉型）
-@mixin font($font, $var, $path) {
-    .font#{$font} {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: $font + px;
-        #{$var}: 10px, ;
-        background-image: url('./#{$path}/aa.png')
-    }
-}
 
 
 @include font(30, padding, dist/images);
@@ -258,3 +212,8 @@ $con : false;
 .slider2 {
     background-image: url('./#{$path}/a2.jpg');
 }
+
+
+
+
+@include pull(200 , right)
