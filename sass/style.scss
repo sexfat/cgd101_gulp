@@ -179,27 +179,60 @@ $con : false;
 }
 
 // ＬＡＹＯＵＴ範例
-@mixin layout($width , $bgc : null) {
+@mixin layout($width, $bgc : null) {
+
     // if layout
-    @if ($width == 100) {
+    @if ($width==100) {
         width: 100%;
     }
 
     @else {
-        width: $width + px;
+        max-width: $width + px;
+        width: 100%;
         //引用其他的函式
         @include center()
     }
+
     // background-color
     background-color:$bgc
 }
+
 .w100 {
-    @include layout(100 , #f29);
-    min-height: 300px;   
+    @include layout(100, #f29);
+    min-height: 300px;
 }
 
 .w1200 {
-   @include layout(1200 ,#f30);
-   min-height: 300px;
+    @include layout(1200, #f30);
+    min-height: 300px;
 
 }
+
+
+@mixin btn($btn_bg, $width:null) {
+    color: #fff;
+    text-align: center;
+    background-color: $btn_bg;
+    max-width: $width;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: .4s all ease;
+
+    //hover過去的效果
+    &:hover {
+        background-color: darken($btn_bg, 20);
+    }
+
+}
+
+.btn_large {
+  @include btn(#333 , 200px);
+}
+
+.btn_default {
+    @include btn(#f29 , 120px);
+  }
+
+  .btn_small {
+    @include btn(#333 , 60px);
+  }

@@ -153,10 +153,56 @@ h5 {
 }
 
 .w1200 {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: #f30;
   min-height: 300px;
+}
+
+.btn_large {
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+  max-width: 200px;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+}
+
+.btn_large:hover {
+  background-color: black;
+}
+
+.btn_default {
+  color: #fff;
+  text-align: center;
+  background-color: #f29;
+  max-width: 120px;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+}
+
+.btn_default:hover {
+  background-color: #bb0065;
+}
+
+.btn_small {
+  color: #fff;
+  text-align: center;
+  background-color: #333;
+  max-width: 60px;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+}
+
+.btn_small:hover {
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */
