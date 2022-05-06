@@ -235,5 +235,51 @@ $con : false;
 
 @include grid(12);
 
+// .box_am {
+//     width: 100px;
+//      height: 100px;
+//      background-color: green;
+// }
+
+@mixin img($list , $w: 100%){
+
+    @each $a in $list {
+        .img_#{$a}{
+          width:$w;
+          background-image: url('./images/#{$a}.jpg');
+          background-repeat: none;
+          background-size: cover;
+          object-fit: cover;
+          @content;
+          } 
+        }
+}
+
+@include img(a1 a2 a3, 80%);
+@include img(b1, 100%);
+@include img(c1, 300px);
+@include img(f1,450px){
+    height: 500px
+};
+
+//map
+$title : (
+  "h1" : 50px,
+  "h2" : 40px, 
+  "h3" : 30px,
+  "h4" : 20px,
+  "h5" : 16px
+);
+
+// title
+@each $key , $val in $title {
+   #{$key} {
+      font-size: $val;
+   }
+}
+
+
+
+
 
 
