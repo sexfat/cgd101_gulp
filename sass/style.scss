@@ -51,29 +51,49 @@ a {
 //偽元素
 a {
     color: #333;
+
     &:hover {
-        color : #eee
+        color: #eee
     }
+
     &::before {
-      content: '';
+        content: '';
     }
 }
 
 // 運算 
 // 單位相同才能運算
 .test {
-   width:  1 + 100px;
-   height:  10 - 100px; // 負值 
-   margin:  10 * 10px; //單位
-   font : (100 / 10) + px // 要注意的是 unit and () 
+    width: 1 + 100px;
+    height: 10 - 100px; // 負值 
+    margin: 10 * 10px; //單位
+    font: (100 / 10) + px // 要注意的是 unit and () 
 }
 
 // 運算的函式
 .test1 {
-  
-width: floor(150.56) + px ;  //無條件捨去
-height: ceil(150.56) + px ; // 無條件進位
-font-size: round(15.56) + px ; // 四捨五入
+    width: floor(150.56) + px; //無條件捨去
+    height: ceil(150.56) + px; // 無條件進位
+    font-size: round(15.56) + px; // 四捨五入
 
+}
+
+//  顏色函式
+.color {
+  color : lighten(#000000,  90); // 顏色變深
+  background-color : darken(#fff,  50)//顏色變淺
+}
+
+//範例運用
+$a_color : #f20;
+
+
+a {
+  color : $a_color;
+  transition: .4s all ease;
+  &:hover {
+    color: darken($a_color, 30);
+
+  }
 }
 

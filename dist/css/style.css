@@ -81,4 +81,19 @@ a::before {
   height: 151px;
   font-size: 16px;
 }
+
+.color {
+  color: #e6e6e6;
+  background-color: gray;
+}
+
+a {
+  color: #f20;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+}
+
+a:hover {
+  color: #660e00;
+}
 /*# sourceMappingURL=style.css.map */
