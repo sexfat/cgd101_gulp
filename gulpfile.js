@@ -33,7 +33,7 @@ exports.sync = parallel(TaskA, TaskB);
 
 // src -> dest  html
 function move() {
-  return src('*.html').pipe(dest('dist'))
+  return src('./src/*.html').pipe(dest('dist'))
 }
 exports.m = move
 
@@ -49,16 +49,12 @@ function moveCss() {
 
 
 
-
-
-
-
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 
 
 function styleSass() {
-  return src('./sass/*.scss')
+  return src('./src/sass/*.scss')
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
@@ -68,10 +64,10 @@ function styleSass() {
 
 // 監看
 function watchfile() {
-  //  watch('*.html' , move)    // 監看html
+  watch('*.html' , move)    // 監看html
   //  watch('js/*.js' , moveJs)  // 監看js
   //  watch('css/*.css' , moveCss)  // 監看js
-  watch(['sass/*.scss' ,'sass/**/*.scss'], styleSass)
+  watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass)
 }
 
 exports.w = watchfile
