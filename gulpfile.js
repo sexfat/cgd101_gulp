@@ -8,7 +8,7 @@ function defaultTask(cb) {
   cb();
 }
 
-exports.default = defaultTask
+//exports.default = defaultTask
 
 
 
@@ -88,12 +88,35 @@ function watchfile() {
   watch(['src/*.html' , 'src/**/*.html'], includeHTML)    // 監看html
   //  watch('js/*.js' , moveJs)  // 監看js
   //  watch('css/*.css' , moveCss)  // 監看js
-  watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass)
+  watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass) // 監看sass
+}
+
+// 瀏覽器同步
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
+
+
+function browser(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+            index: "index.html"
+        },
+        port: 3000
+    });
+    watch(['src/*.html' , 'src/**/*.html'], includeHTML)    // 監看html
+    //  watch('js/*.js' , moveJs)  // 監看js
+    //  watch('css/*.css' , moveCss)  // 監看js
+    watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass) // 監看sass
+    done();
 }
 
 
 
 exports.w =  series(parallel(includeHTML,styleSass), watchfile)  
+
+
+
 
 
 
