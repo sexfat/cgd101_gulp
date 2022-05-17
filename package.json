@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "1.安裝套件": "npm install",
-    "2. 監看": "gulp w"
+    "2. 監看": "gulp w",
+    "3. 瀏覽器同步": "gulp"
   },
   "keywords": [],
   "author": "",

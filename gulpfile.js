@@ -104,16 +104,19 @@ function browser(done) {
         },
         port: 3000
     });
-    watch(['src/*.html' , 'src/**/*.html'], includeHTML)    // 監看html
+    watch(['src/*.html' , 'src/**/*.html'], includeHTML).on('change' , reload)    // 監看html
     //  watch('js/*.js' , moveJs)  // 監看js
     //  watch('css/*.css' , moveCss)  // 監看js
-    watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass) // 監看sass
+    watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass).on('change' , reload) // 監看sass
     done();
 }
 
 
-
+// 監看
 exports.w =  series(parallel(includeHTML,styleSass), watchfile)  
+
+//瀏覽器同步
+exports.default =  series(parallel(includeHTML,styleSass), browser)  
 
 
 
