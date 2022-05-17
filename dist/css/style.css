@@ -77,8 +77,27 @@ footer {
   font-size: 40px;
 }
 
+@media all and (max-width: 1024px) {
+  .index h1 {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .index h1 {
+    font-size: 12px;
+    color: #f20;
+  }
+}
+
 .about h2 {
   font-size: 20px;
+}
+
+@media all and (max-width: 720px) {
+  .about h2 {
+    font-size: medium;
+  }
 }
 
 body {
@@ -477,7 +496,7 @@ h5 {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 720px) {
   .r {
     color: #f20;
   }

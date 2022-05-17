@@ -79,3 +79,24 @@
         }
      }
 }
+
+
+//rwd 斷點
+@mixin m(){
+    @media all and (max-width : $m_breakpoint) {
+        @content 
+      }
+};
+
+@mixin t(){
+    @media all and (max-width :  $t_breakpoint) {
+        @content 
+      }
+};
+
+//
+@mixin rwd($b) {
+    @media all and (max-width :  $b) {
+        @content 
+      }
+}
