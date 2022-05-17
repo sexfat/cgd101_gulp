@@ -33,9 +33,28 @@ exports.sync = parallel(TaskA, TaskB);
 
 // src -> dest  html
 function move() {
-  return src('./src/*.html').pipe(dest('dist'))
+  return src('./src/*.html')
+  .pipe(dest('dist'))
 }
 exports.m = move
+
+
+const fileinclude = require('gulp-file-include');
+
+function includeHTML() {
+    return src('src/*.html') // 來源
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))// fileinclude function
+        .pipe(dest('./dist'));// 目的地
+}
+
+exports.html =  includeHTML;
+
+
+
+
 
 // js move
 function moveJs() {
@@ -62,9 +81,11 @@ function styleSass() {
 }
 
 
+
+
 // 監看
 function watchfile() {
-  watch('*.html' , move)    // 監看html
+  watch('src/*.html' , move)    // 監看html
   //  watch('js/*.js' , moveJs)  // 監看js
   //  watch('css/*.css' , moveCss)  // 監看js
   watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass)
