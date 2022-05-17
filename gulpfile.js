@@ -91,7 +91,9 @@ function watchfile() {
   watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass)
 }
 
-exports.w = watchfile
+
+
+exports.w =  series(parallel(includeHTML,styleSass), watchfile)  
 
 
 
