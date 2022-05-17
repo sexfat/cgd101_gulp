@@ -226,7 +226,7 @@ $con : false;
     @for $i from 1 through $col{
         .col-#{$i} {
             flex: 0 0 auto;
-            width: ($i / $col) *100%;
+          //  width: ($i / $col) *100%;
 
         }
     }
