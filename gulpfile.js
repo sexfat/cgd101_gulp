@@ -58,12 +58,12 @@ exports.html =  includeHTML;
 
 // js move
 function moveJs() {
-  return src('js/*.js').pipe(dest('dist/js'))
+  return src('src/js/*.js').pipe(dest('dist/js'))
 }
 
-//css move
-function moveCss() {
-  return src('css/*.css').pipe(dest('dist/css'))
+//img move
+function moveImg() {
+  return src('src/images/*.*').pipe(dest('dist/images'))
 }
 
 
