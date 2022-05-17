@@ -184,6 +184,7 @@ $con : false;
 .w1200 {
     @include layout(1200, #f30);
     min-height: 300px;
+    margin-top: 45px;
 
 }
 
@@ -297,10 +298,57 @@ $con : false;
       font-size: 150px;
     }
 }
+$basic : (
+   "white" : #fff,
+   "dark" : #333,
+   "primary" : #1A242A,
+   "secondary" : #445F6F,
+   "tretiary" : #7697AB,
+   "disabled" : #ABAEB0,
 
-// @media screen and (max-width : 414px) {
-    
-// }
+);
+
+
+//each 迴圈
+@each $key , $val in $basic {
+  .#{$key} {
+    background-color : $val
+  }
+}
+
+
+$space : (
+   "large" : 56px,
+   "medium" : 32px,
+   "small" : 16px  
+);
+
+
+
+@each $key , $val in $space {
+    .#{$key} {
+      margin-top : $val
+    }
+  }
+
+
+$font_size : (
+  "t1" : 16px,
+  "t2" : 24px
+
+
+);
+
+//each 迴圈
+@each $key , $val in $font_size {
+    .#{$key} {
+      font-size : $val
+    }
+  }
+  
+
+
+
 
 
 

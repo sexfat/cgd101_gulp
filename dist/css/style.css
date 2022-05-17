@@ -220,6 +220,7 @@ h5 {
   margin-right: auto;
   background-color: #f30;
   min-height: 300px;
+  margin-top: 45px;
 }
 
 .btn_xxl {
@@ -507,5 +508,49 @@ h5 {
     color: #333;
     font-size: 150px;
   }
+}
+
+.white {
+  background-color: #fff;
+}
+
+.dark {
+  background-color: #333;
+}
+
+.primary {
+  background-color: #1A242A;
+}
+
+.secondary {
+  background-color: #445F6F;
+}
+
+.tretiary {
+  background-color: #7697AB;
+}
+
+.disabled {
+  background-color: #ABAEB0;
+}
+
+.large {
+  margin-top: 56px;
+}
+
+.medium {
+  margin-top: 32px;
+}
+
+.small {
+  margin-top: 16px;
+}
+
+.t1 {
+  font-size: 16px;
+}
+
+.t2 {
+  font-size: 24px;
 }
 /*# sourceMappingURL=style.css.map */
