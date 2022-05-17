@@ -68,3 +68,14 @@
     // background-color
     background-color:$bgc
 }
+
+
+// title
+
+@mixin title($title){
+    @each $key , $val in $title {
+        #{$key} {
+           font-size: $val;
+        }
+     }
+}

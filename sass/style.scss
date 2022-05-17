@@ -262,21 +262,71 @@ $con : false;
     height: 500px
 };
 
-//map
-$title : (
-  "h1" : 50px,
-  "h2" : 40px, 
-  "h3" : 30px,
-  "h4" : 20px,
-  "h5" : 16px
-);
 
-// title
-@each $key , $val in $title {
-   #{$key} {
-      font-size: $val;
-   }
+
+
+
+@include title($title);
+
+
+//rwd 斷點
+@mixin m(){
+    @media all and (max-width : $m_breakpoint) {
+        @content 
+      }
+};
+
+@mixin t(){
+    @media all and (max-width :  $t_breakpoint) {
+        @content 
+      }
+};
+
+//
+@mixin rwd($b) {
+    @media all and (max-width :  $b) {
+        @content 
+      }
 }
+
+
+.r {
+   color: #000000;
+   font-size: 100px;
+}
+
+@include t(){
+    //平板
+    .r {
+     color: yellow;
+    }
+ }
+
+
+@include m(){
+    //手機板
+    .r {
+        color: #f20; 
+    }
+} 
+
+@include rwd(414px){
+    .r {
+      color: #333;
+      font-size: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

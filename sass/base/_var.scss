@@ -13,3 +13,21 @@ $map : (
 
 // images url
 $path  :  dist/images;
+
+
+//map
+$title : (
+  "h1" : 50px,
+  "h2" : 40px, 
+  "h3" : 30px,
+  "h4" : 20px,
+  "h5" : 16px,
+  ".small" : 10px,
+  ".large" : 3rem
+);
+
+
+//斷點
+
+$m_breakpoint : 576px;
+$t_breakpoint : 1024px;

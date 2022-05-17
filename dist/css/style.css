@@ -457,4 +457,36 @@ h4 {
 h5 {
   font-size: 16px;
 }
+
+.small {
+  font-size: 10px;
+}
+
+.large {
+  font-size: 3rem;
+}
+
+.r {
+  color: #000000;
+  font-size: 100px;
+}
+
+@media all and (max-width: 1024px) {
+  .r {
+    color: yellow;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .r {
+    color: #f20;
+  }
+}
+
+@media all and (max-width: 414px) {
+  .r {
+    color: #333;
+    font-size: 150px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
