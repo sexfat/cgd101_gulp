@@ -1,5 +1,6 @@
 import $ from "jquery";
 import { gsap } from "gsap";
+import {cube} from './mymodule.js';
 
 $('body').css('background-color' , 'red');
 
@@ -11,5 +12,7 @@ gsap.to('.box' , {
     yoyo: true,
     duration: 2
 })
+
+console.log(cube(10));
 
 console.log('webpack ok');
