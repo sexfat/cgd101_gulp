@@ -37,11 +37,11 @@ const autoprefixer = require('gulp-autoprefixer');
 function styleSass() {
   return src('./src/sass/*.scss')
       .pipe(sourcemaps.init())
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) //compressed 壓縮 ,  expanded 沒壓縮
       .pipe(sourcemaps.write())
       .pipe(autoprefixer({
         cascade: false
-    }))
+    }))//  解決跨瀏覽器
       .pipe(dest('./dist/css'));
 }
 
