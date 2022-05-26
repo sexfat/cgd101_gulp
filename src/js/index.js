@@ -13,8 +13,10 @@ gsap.to('.box' , {
     x: 400,
     y: 400,
     repeat: 2,
+    rotation: 360,
     yoyo: true,
-    duration: 2
+    duration: 2,
+    scale: 2
 })
 
 console.log(cube(30));
