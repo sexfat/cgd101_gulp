@@ -32,10 +32,26 @@ function moveJs() {
 
 
 
-//img move
+//img move 
 function moveImg() {
   return src('src/images/*.*').pipe(dest('dist/images'))
 }
+
+// 壓圖
+const imagemin = require('gulp-imagemin');
+
+function min_images(){
+    return src('src/images/*.*')
+    .pipe(imagemin([
+        imagemin.mozjpeg({quality: 80, progressive: true}) // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
+    ]))
+    .pipe(dest('dist/images'))
+}
+
+
+exports.mini_img = min_images
+
+
 
 
 

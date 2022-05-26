@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "1.安裝套件": "npm install",
     "2. 監看": "gulp w",
-    "3. 瀏覽器同步": "gulp"
+    "3. 瀏覽器同步": "gulp",
+    "4. 上線壓圖": " gulp mini_img"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.51.0"
