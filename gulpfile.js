@@ -18,9 +18,19 @@ function includeHTML() {
 exports.html =  includeHTML;
 
 // js move
+const babel = require('gulp-babel');
+
 function moveJs() {
-  return src('src/js/*.js').pipe(dest('dist/js'))
+  return src('src/js/*.js')
+  .pipe(babel({
+    presets: ['@babel/env']
+}))
+  .pipe(dest('dist/js'))
 }
+
+
+
+
 
 //img move
 function moveImg() {
