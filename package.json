@@ -5,7 +5,8 @@
   "main": "test.js",
   "scripts": {
     "初始化": "npm init -y",
-    "安裝套件": "npm i"
+    "安裝套件": "npm i",
+    "瀏覽器" : "webpack-dev-server"
   },
   "repository": {
     "type": "git",
