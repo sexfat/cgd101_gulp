@@ -4,7 +4,8 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "初始化": "npm init -y",
+    "安裝套件": "npm i"
   },
   "repository": {
     "type": "git",
