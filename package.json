@@ -4,10 +4,11 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "初始化": "npm init -y",
-    "安裝套件": "npm i",
-    "全域安裝瀏覽器" : "npm install webpack-dev-server@3.11.3 -g",
-    "瀏覽器" : "webpack-dev-server"
+    "1.初始化": "npm init -y",
+    "2.安裝套件": "npm i",
+    "3.全域安裝瀏覽器" : "npm install webpack-dev-server@3.11.3 -g",
+    "開發用瀏覽器" : "webpack-dev-server",
+    "打包上線": "webpack"
   },
   "repository": {
     "type": "git",

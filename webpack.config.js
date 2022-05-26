@@ -66,5 +66,5 @@ module.exports = {
         index: 'index.html',
         open: true
     },          // 服務器配置
-    mode: 'development'      // 開發模式配置 production 上線   development開發
+    mode: 'production'      // 開發模式配置 production 上線   development開發
 }
