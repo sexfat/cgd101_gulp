@@ -16,5 +16,6 @@ gsap.to('.box' , {
 })
 
 console.log(cube(30));
+console.log(cube(10) + "person");
 
 console.log('webpack ok');
