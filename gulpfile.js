@@ -100,14 +100,26 @@ function browser(done) {
     done();
 }
 
+// 刪除舊檔案
+const clean = require('gulp-clean');
+
+function clear() {
+  return src('dist' ,{ read: false ,allowEmpty: true })//不去讀檔案結構，增加刪除效率  / allowEmpty : 允許刪除空的檔案
+  .pipe(clean({force: true})); //強制刪除檔案 
+}
+
+
 
 // 監看
 exports.w =  series(parallel(moveJs,moveImg,includeHTML,styleSass), watchfile)  
 
 //瀏覽器同步
-exports.default =  series(parallel(moveJs,includeHTML,styleSass,moveImg), browser)  
+exports.default =  series(clear, parallel(moveJs,includeHTML,styleSass,moveImg), browser)  
 
 
+//打包上線
+
+exports.package = series(clear ,parallel(moveJs , includeHTML ,styleSass , min_images))
 
 
 
