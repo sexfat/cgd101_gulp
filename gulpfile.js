@@ -17,14 +17,14 @@ function includeHTML() {
 
 exports.html =  includeHTML;
 
-// js move
+// js move es6 -> es5
 const babel = require('gulp-babel');
 
 function moveJs() {
   return src('src/js/*.js')
   .pipe(babel({
     presets: ['@babel/env']
-}))
+}))// es6 ->es5
   .pipe(dest('dist/js'))
 }
 
@@ -59,7 +59,7 @@ function styleSass() {
 // 監看
 function watchfile() {
   watch(['src/*.html' , 'src/**/*.html'], includeHTML)    // 監看html
-  watch('js/*.js' , moveJs)  // 監看js
+  watch('src/js/*.js' , moveJs)  // 監看js
   watch(['src/images/*.*', 'src/images/**/*.*'] , moveImg)  // 監看img
   watch(['./src/sass/*.scss' ,'./src/sass/**/*.scss'], styleSass) // 監看sass
 }
