@@ -6,8 +6,8 @@
   "scripts": {
     "1.初始化": "npm init -y",
     "2.安裝套件": "npm i",
-    "3.全域安裝瀏覽器" : "npm install webpack-dev-server@3.11.3 -g",
-    "開發用瀏覽器" : "webpack-dev-server",
+    "3.全域安裝瀏覽器": "npm install webpack-dev-server@3.11.3 -g",
+    "開發用瀏覽器": "webpack-dev-server",
     "打包上線": "webpack"
   },
   "repository": {
@@ -23,7 +23,8 @@
   "homepage": "https://github.com/sexfat/cgd101_gulp#readme",
   "dependencies": {
     "gsap": "^3.10.4",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

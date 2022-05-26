@@ -1,10 +1,11 @@
-import $ from "jquery";
+//import $ from "jquery";
 import { gsap } from "gsap";
 import {cube} from './mymodule.js';
 import '../css/header.css';
 import '../css/style.css';
 import '../css/footer.css';
 import '../sass/index.scss';
+import Vue from 'vue';
 
 $('body').css('background-color' , 'red');
 

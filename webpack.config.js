@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
+const webpack  = require('webpack');
 
 
 
@@ -15,6 +16,12 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
+    },
+    //解決vue jquery 路徑
+    resolve: {
+        alias: {
+           vue: 'vue/dist/vue.js'
+        }
     },             // 出口文件
     module: {
         rules: [{
@@ -36,6 +43,10 @@ module.exports = {
     plugins: [
          //清理舊的檔案
         new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          }),
         new MiniCssExtractPlugin({
             filename: "css/[name].css" // 產出css
         }),
