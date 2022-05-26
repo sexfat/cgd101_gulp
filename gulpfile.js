@@ -31,6 +31,7 @@ function moveImg() {
 
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 
 // sass ->css
 function styleSass() {
@@ -38,6 +39,9 @@ function styleSass() {
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
       .pipe(sourcemaps.write())
+      .pipe(autoprefixer({
+        cascade: false
+    }))
       .pipe(dest('./dist/css'));
 }
 
