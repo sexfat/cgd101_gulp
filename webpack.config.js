@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: { 
          index: './src/js/index.js' , //index chunkname
-         //about : './src/js/about.js' 
+         about : './src/js/about.js' 
    },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -40,6 +40,14 @@ module.exports = {
             template : './src/index.html',
             //來源
             filename : 'index.html'
+            // 目的地
+        }),
+        new HtmlWebpackPlugin({
+            chunks : ['about'],  //選擇注入資源 chunk
+            inject  : 'body', //預設<body> js </body>  head or body
+            template : './src/about.html',
+            //來源
+            filename : 'about.html'
             // 目的地
         })
 
