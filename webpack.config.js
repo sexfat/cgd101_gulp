@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: { 
-         index: './src/js/index.js' ,
+         index: './src/js/index.js' , //index chunkname
          about : './src/js/about.js' 
    },               // 入口文件
     output: {
@@ -13,16 +13,16 @@ module.exports = {
     module: {
         rules: [{
             // 格式
-            test: /\.css$/,
-            //順序是由下到上 css > style
+            test: /\.(sass|scss|css)$/,
+            //順序是由下到上 sass > css > style
             use: [{
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                    publicPath: 'dist'
+                  publicPath: './dist'
                 }
-            },
-                //'style-loader', 會跟原本的衝突 
-                'css-loader'
+              },
+                'css-loader',
+                'sass-loader'
             ],
         }]
 

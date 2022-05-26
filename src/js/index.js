@@ -4,6 +4,7 @@ import {cube} from './mymodule.js';
 import '../css/header.css';
 import '../css/style.css';
 import '../css/footer.css';
+import '../sass/index.scss';
 
 $('body').css('background-color' , 'red');
 
